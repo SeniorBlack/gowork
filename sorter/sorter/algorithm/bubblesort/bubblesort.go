@@ -1,7 +1,4 @@
-package main
-
-import "fmt"
-import "time"
+package bubblesort
 
 func BubbleSort(values []int) {
 	for i := 0; i < len(values)-1; i++ {
@@ -16,12 +13,5 @@ func BubbleSort(values []int) {
 			break
 		}
 	}
-
-}
-
-func main() {
-	values := []int{1, 5, 2, 3, 9, 42, 12}
-	BubbleSort(values)
-	fmt.Println(values)
 
 }
