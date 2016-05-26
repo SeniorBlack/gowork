@@ -4,14 +4,14 @@ func BubbleSort(values []int) {
 	for i := 0; i < len(values)-1; i++ {
 		flag := true
 		for j := 0; j < len(values)-1-i; j++ {
+			flag = true
 			if values[j] > values[j+1] {
 				values[j], values[j+1] = values[j+1], values[j]
-				flag := false
+				flag = false
 			}
 		}
-		if flag == false {
+		if flag == true {
 			break
 		}
 	}
-
 }

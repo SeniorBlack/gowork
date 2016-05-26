@@ -7,7 +7,7 @@ import "io"
 import "os"
 import "strconv"
 
-import "algorithm/bu"
+import "algorithm/bubblesort"
 
 var infile *string = flag.String("i", "infile", "File contains values for sorting")
 var outfile *string = flag.String("o", "outfile", "File to receive sorte values")
@@ -18,7 +18,7 @@ func readValues(infile string) (values []int, err error) {
 	file, err := os.Open(infile)
 	if err != nil {
 		fmt.Println("Failed to open the input file", infile)
-		return
+
 	}
 
 	defer file.Close() //遇到错误，关闭资源
@@ -87,7 +87,8 @@ func main() {
 	} else {
 		fmt.Println(err)
 	}
-
+	//排序
+	bubblesort.BubbleSort(values)
 	//写入
 	err1 := writeValues(values, *outfile)
 	if err1 == nil {
